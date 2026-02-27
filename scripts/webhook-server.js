@@ -97,7 +97,7 @@ const server = http.createServer((req, res) => {
       return;
     }
 
-    // Only deploy on push to master branch
+    // Only deploy on push to main branch
     if (event.ref !== "refs/heads/main") {
       res.writeHead(200);
       res.end("Ignored (not main branch)");

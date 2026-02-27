@@ -2,7 +2,7 @@
 set -e
 
 echo ">>> Pulling latest code..."
-git pull origin master
+git pull origin main
 
 echo ">>> Installing dependencies..."
 yarn install --frozen-lockfile
