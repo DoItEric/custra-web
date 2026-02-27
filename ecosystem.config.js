@@ -10,7 +10,7 @@ module.exports = {
       },
     },
     {
-      name: "webhook",
+      name: "custra-webhook",
       script: "scripts/webhook-server.js",
       cwd: "/www/wwwroot/custra.ericup.com",
       env: {
