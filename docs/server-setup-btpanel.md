@@ -58,10 +58,10 @@ vi .env.local    # 填入真实的 API Key、域名等配置
 ```bash
 cd /www/wwwroot/custra.ericup.com
 yarn install --frozen-lockfile
-yarn build
+yarn build:deploy
 
-# 启动 Next.js（standalone 模式默认监听 3000 端口）
-pm2 start .next/standalone/server.js --name custra-waitlist
+# 启动 Next.js，build:deploy 会把产物输出到 dist/
+PORT=8080 pm2 start dist/server.js --name custra-waitlist
 pm2 save
 ```
 
