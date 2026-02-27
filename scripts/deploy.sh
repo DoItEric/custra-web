@@ -11,6 +11,6 @@ echo ">>> Building..."
 yarn build:deploy
 
 echo ">>> Restarting service..."
-PORT=8080 pm2 restart "${PM2_APP_NAME}" || PORT=8080 pm2 start dist/server.js --name "${PM2_APP_NAME}"
+pm2 reload ecosystem.config.js --only "${PM2_APP_NAME}" || pm2 start ecosystem.config.js --only "${PM2_APP_NAME}"
 
 echo ">>> Done."
