@@ -90,6 +90,10 @@ pm2 start /www/wwwroot/custra.ericup.com/scripts/webhook-server.js \
 pm2 save
 ```
 
+```
+pm2 start ecosystem.config.js --only custra-webhook
+```
+
 验证：
 
 ```bash
