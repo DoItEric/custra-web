@@ -10,7 +10,7 @@ import {
 } from "@react-email/components";
 
 export const EmailTemplate = () => {
-  const siteLogo = process.env.NEXT_PUBLIC_DOMAIN + "/speaker.svg";
+  const siteLogo = process.env.NEXT_PUBLIC_DOMAIN + "/icon.png";
   return (
     <Html>
       <Head />
@@ -29,15 +29,17 @@ export const EmailTemplate = () => {
               style={text}
             >{`Big welcome and thanks for subscribing ${process.env.NEXT_PUBLIC_SITE_NAME}`}</Text>
             <Text style={text}>
-              🚀 The mission is to send out a stylish and simple newsletter that
-              help busy creatives to stay updated without cluttering their
-              inbox.
+              🎯 CUSTRA is a local meeting &amp; course capture assistant: select a
+              region (slides, shared screen, subtitles), and it saves key frames
+              when the screen changes — no more pausing to screenshot mid-call.
             </Text>
             <Text style={text}>
-              🛳 All new AI resources and tools are carefully curated, with only
-              a handful of the best being shipped.
+              📁 Everything runs on your machine. When we open the beta, you’ll
+              get download and usage instructions first.
             </Text>
-            <Text style={text}>Expect a new shipment every Tuesday!</Text>
+            <Text style={text}>
+              Thanks for joining — we’ll be in touch when it’s ready.
+            </Text>
           </Section>
         </Container>
       </Body>

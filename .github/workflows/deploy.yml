@@ -1,0 +1,32 @@
+# Deployment is handled by GitHub's native Webhook feature (not GitHub Actions).
+#
+# How it works:
+#   1. On push to master, GitHub POSTs to https://your-domain.com/webhook/deploy
+#   2. The webhook server on the VPS verifies the signature and runs deploy.sh
+#
+# To configure: GitHub repo → Settings → Webhooks → Add webhook
+#   Payload URL : https://custra.ericup.com/webhook/deploy
+#   Content type: application/json
+#   Secret      : same value as WEBHOOK_SECRET in your server environment
+#   Events      : Just the push event
+#
+# This workflow only runs a type-check to give you a green/red signal on each commit.
+
+name: Type Check
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn tsc --noEmit

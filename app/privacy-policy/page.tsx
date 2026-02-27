@@ -6,7 +6,7 @@ import { ChevronLeft } from "lucide-react";
 const PrivacyPolicyPage = () => {
   const siteLogo =
     process.env.NEXT_PUBLIC_LOGO ||
-    "https://res.cloudinary.com/dyv1yduua/image/upload/v1733392810/speaker_oiuezn.svg";
+    "/icon32.png";
 
   return (
     <section className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2">
