@@ -82,7 +82,7 @@ Webhook 服务监听 9000 端口（仅本机内部，不对外开放）。
 
 ```bash
 pm2 start /www/wwwroot/custra.ericup.com/scripts/webhook-server.js \
-  --name webhook \
+  --name custra-webhook \
   --env WEBHOOK_SECRET="your-random-secret-string" \
   --env WEBHOOK_PORT=9000 \
   --env APP_DIR=/www/wwwroot/custra.ericup.com \

@@ -12,9 +12,14 @@ module.exports = {
     {
       name: "webhook",
       script: "scripts/webhook-server.js",
+      cwd: "/www/wwwroot/custra.ericup.com",
       env: {
         WEBHOOK_PORT: 9000,
-        // WEBHOOK_SECRET, APP_DIR, PM2_APP_NAME 在服务器上设置，不写在这里
+        APP_DIR: "/www/wwwroot/custra.ericup.com",
+        PM2_APP_NAME: "custra-waitlist",
+        // WEBHOOK_SECRET is read from system environment variable.
+        // On the server, run: echo 'export WEBHOOK_SECRET="your-secret"' >> ~/.bashrc && source ~/.bashrc
+        WEBHOOK_SECRET: process.env.WEBHOOK_SECRET,
       },
     },
   ],
