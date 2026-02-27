@@ -2,7 +2,8 @@ module.exports = {
   apps: [
     {
       name: "custra-waitlist",
-      script: "dist/server.js",
+      script: "server.js",
+      cwd: "/www/wwwroot/custra.ericup.com/dist",
       env: {
         PORT: 8080,
         NODE_ENV: "production",
